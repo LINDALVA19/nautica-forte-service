@@ -31,6 +31,15 @@ A próxima fase do projeto consistirá na integração com um banco de dados em 
 3. Realizar o upload de fotos/vídeos (anexos) para o pré-diagnóstico.
 4. Implementar notificações push automáticas.
 5. Validação formal do protótipo com o cliente (Náutica Forte).
+6. O formulário ainda não tem o botão para anexar mídia. Alguém da Frente 2 precisará implementar isso junto com o upload para o Firebase Storage.
+7. "Front-end visual concluído. Próxima etapa: Integração com Firebase para persistência de dados."
+
+8. Requisito do Edital|	O que eu já fiz?|	O que falta? (Frentes 1 e 2)
+5.1 Autenticação e perfis|	A tela de Login e Perfil visual.|	Fazer o cadastro/login real (Firebase Auth), criar os perfis (Cliente, Mecânico, Admin) e bloquear telas por permissão.
+5.2 Abertura de chamado|	A tela do formulário completa e o status "Pendente" visual.|	Fazer o botão "Próximo" salvar os dados no banco de dados (Firestore).
+5.3 Atendimento (Mecânico/Admin)|	A tela "Meus Chamados" visual.|	Criar uma tela de mecânico onde ele consiga ver os chamados de outras pessoas e mudar o status (Pendente -> Em andamento -> Concluído).
+5.4 Persistência e segurança|	Nada (os dados somem ao atualizar a tela).|	Integração com o Firebase (Banco de Dados e Storage para fotos) e regras de segurança (HTTPS, senhas com hash).
+5.5 Documentação|	Você já está indo bem (vai fazer o README).|	Falta o registro da validação com a Náutica Forte e instruções para o cliente.
 
 ## 👨‍💻 Autores
 Projeto desenvolvido pelo grupo de alunos do curso de Sistemas de Informação (UNINASSAU Olinda):
