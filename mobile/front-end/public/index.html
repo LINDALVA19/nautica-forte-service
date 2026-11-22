@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Náutica Forte Service — App Mobile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <!-- MOLDURA DE SMARTPHONE REALISTA PARA SIMULAÇÃO IMEDIATA -->
+  <div class="simulator-stage">
+    <div class="phone-device">
+      <div class="phone-notch"></div>
+
+      <!-- STATUS BAR IOS (9:41) -->
+      <div class="ios-statusbar" id="iosStatusBar">
+        <span class="sb-time">9:41</span>
+        <div class="sb-icons">
+          <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor">
+            <rect x="0" y="7" width="3" height="4" rx="1"/>
+            <rect x="4.3" y="5" width="3" height="6" rx="1"/>
+            <rect x="8.6" y="2.5" width="3" height="8.5" rx="1"/>
+            <rect x="13" y="0" width="3" height="11" rx="1"/>
+          </svg>
+          <svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor">
+            <path d="M7.5 2.4c2.6 0 5 1 6.8 2.7l-1.3 1.4c-1.5-1.4-3.4-2.2-5.5-2.2s-4 .8-5.5 2.2L.7 5.1C2.5 3.4 4.9 2.4 7.5 2.4zm0 3.5c1.6 0 3.1.6 4.2 1.7l-1.3 1.4c-.8-.8-1.8-1.2-2.9-1.2s-2.1.4-2.9 1.2L3.3 7.6c1.1-1.1 2.6-1.7 4.2-1.7zm0 3.5c.7 0 1.3.3 1.7.8L7.5 11 5.8 10.2c.4-.5 1-.8 1.7-.8z"/>
+          </svg>
+          <svg width="22" height="11" viewBox="0 0 22 11" fill="none">
+            <rect x="0.5" y="0.5" width="18" height="10" rx="2.5" stroke="currentColor"/>
+            <rect x="2" y="2" width="15" height="7" rx="1.5" fill="currentColor"/>
+            <path d="M20 3.5v4a1.5 1.5 0 0 0 0-4z" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- =========================================================
+           1. TELA DE SPLASH
+           ========================================================= -->
+      <section id="view-splash" class="app-view active dark-navy-view">
+        <div class="splash-center">
+          <div class="splash-logo-frame">
+            <img
+              src="/assets/logo-nautica-forte.jpg"
+              alt="Náutica Forte"
+              class="splash-logo-img"
+            />
+          </div>
+          <h1 class="splash-title">NÁUTICA FORTE</h1>
+          <span class="splash-sub">S E R V I C E</span>
+          <p class="splash-tagline">Seu barco em boas mãos,<br />sempre.</p>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           2. TELA DE LOGIN
+           ========================================================= -->
+      <section id="view-login" class="app-view light-view">
+        <div class="scroll-body pad-auth">
+          <div class="login-brand-block">
+            <img
+              src="/assets/logo-nautica-forte.jpg"
+              alt="Náutica Forte"
+              class="brand-logo-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+            />
+            <div class="boat-line-emblem small dark-stroke" style="display:none;">
+              <svg viewBox="0 0 180 95" fill="none">
+                <path d="M28 56 L68 38 L138 38 L162 49 L146 66 L34 66 Z" stroke="#072540" stroke-width="3.5"/>
+                <path d="M16 74 Q45 66 74 74 T132 74 T168 74" stroke="#072540" stroke-width="3.5"/>
+              </svg>
+            </div>
+            <div class="brand-wordmark">
+              <strong>NÁUTICA FORTE</strong>
+              <span>S E R V I C E</span>
+            </div>
+          </div>
+
+          <h2 class="auth-heading">Entrar</h2>
+          <p class="auth-sub">Acesse sua conta para continuar.</p>
+
+          <form id="loginForm" class="nf-form">
+            <div class="icon-input">
+              <span class="in-ico">✉</span>
+              <input id="loginEmail" type="text" required placeholder="E-mail ou telefone" value="mariana.silva@nautica.com" />
+            </div>
+
+            <div class="icon-input">
+              <span class="in-ico">🔒</span>
+              <input id="loginPassword" type="password" required placeholder="Senha" value="123456" />
+              <button type="button" class="eye-toggle" data-target="loginPassword">👁</button>
+            </div>
+
+            <div class="auth-row-between">
+              <label class="check-label">
+                <input type="checkbox" checked />
+                <span>Lembrar-me</span>
+              </label>
+              <button type="button" class="link-btn" id="forgotPassBtn">Esqueci minha senha</button>
+            </div>
+
+            <button type="submit" class="btn-navy-full">Entrar</button>
+          </form>
+
+          <p class="auth-switch-text">
+            Não tem uma conta? <button type="button" class="link-bold" data-go="register">Cadastre-se</button>
+          </p>
+
+          <div class="or-divider"><span>ou</span></div>
+
+          <div class="social-stack">
+            <button type="button" class="btn-social" data-social="Google">
+              <span class="g-badge">G</span>
+              <span>Entrar com Google</span>
+            </button>
+            <button type="button" class="btn-social" data-social="Apple">
+              <span class="a-badge"></span>
+              <span>Entrar com Apple</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           3. TELA DE CADASTRO
+           ========================================================= -->
+      <section id="view-register" class="app-view light-view">
+        <div class="scroll-body pad-auth">
+          <h2 class="auth-heading">Criar conta</h2>
+          <p class="auth-sub">Preencha os seus dados para começar.</p>
+
+          <div class="segment-control" id="registerRoleControl">
+            <button type="button" class="seg-btn active" data-role="Cliente">Cliente</button>
+            <button type="button" class="seg-btn" data-role="Mecânico">Mecânico</button>
+            <button type="button" class="seg-btn" data-role="Administrador">Administrador</button>
+          </div>
+
+          <form id="registerForm" class="nf-form">
+            <div class="clean-input">
+              <input id="regName" type="text" required placeholder="Nome completo" />
+            </div>
+            <div class="clean-input">
+              <input id="regEmail" type="email" required placeholder="E-mail" />
+            </div>
+            <div class="clean-input">
+              <input id="regPhone" type="tel" required placeholder="Telefone / WhatsApp" />
+            </div>
+            <div class="icon-input">
+              <input id="regPass" type="password" required placeholder="Senha" />
+              <button type="button" class="eye-toggle" data-target="regPass">👁</button>
+            </div>
+            <div class="icon-input">
+              <input id="regPassConfirm" type="password" required placeholder="Confirmar senha" />
+              <button type="button" class="eye-toggle" data-target="regPassConfirm">👁</button>
+            </div>
+
+            <button type="submit" class="btn-navy-full">Cadastrar</button>
+          </form>
+
+          <p class="auth-switch-text">
+            Já possui conta? <button type="button" class="link-bold" data-go="login">Fazer login</button>
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           4. TELA INICIAL (HOME)
+           ========================================================= -->
+      <section id="view-home" class="app-view light-view has-tabbar">
+        <div class="navy-hero-header">
+          <div class="greeting-block">
+            <h2 id="homeGreeting">Olá, Mariana!</h2>
+            <p>Pronto para solicitar um serviço?</p>
+          </div>
+          <div class="hero-boat-card">
+            <div class="hero-boat-overlay">
+              <strong>Náutica Forte</strong>
+              <span>Sempre com você,<br />no mar e fora dele.</span>
+            </div>
+            <img
+              src="/assets/logo-nautica-forte.jpg"
+              alt="Logo Náutica Forte"
+              class="hero-boat-logo"
+            />
+          </div>
+
+        <div class="scroll-body home-grid-wrap">
+          <div class="quick-grid">
+            <button type="button" class="quick-tile" data-go="new-step-1">
+              <span class="qt-icon">🔧</span>
+              <strong>Novo Chamado</strong>
+            </button>
+
+            <button type="button" class="quick-tile" data-go="tickets">
+              <span class="qt-icon">📋</span>
+              <strong>Meus Chamados</strong>
+            </button>
+
+            <button type="button" class="quick-tile" data-go="vessels">
+              <span class="qt-icon">🛥️</span>
+              <strong>Minha Embarcação</strong>
+            </button>
+
+            <button type="button" class="quick-tile" data-go="notifications">
+              <span class="qt-icon">🔔</span>
+              <strong>Notificações</strong>
+              <span class="notif-dot" id="homeNotifBadge">5</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           5. FORMULÁRIO DO CHAMADO — ETAPA 1 (CLIENTE / EMBARCAÇÃO / LOCAL)
+           ========================================================= -->
+      <section id="view-new-step-1" class="app-view light-view">
+        <div class="navy-topbar">
+          <button type="button" class="topbar-back" data-go="home">←</button>
+          <h3>Novo Chamado</h3>
+          <span class="topbar-spacer"></span>
+        </div>
+
+        <div class="scroll-body form-scroll">
+          <h4 class="form-group-label">Dados do Cliente</h4>
+          <div class="labeled-box">
+            <label for="fClientName">Nome</label>
+            <input id="fClientName" type="text" value="Mariana Silva" required />
+          </div>
+          <div class="labeled-box">
+            <label for="fClientPhone">Telefone / WhatsApp</label>
+            <input id="fClientPhone" type="tel" value="(81) 98765-4321" required />
+          </div>
+
+          <h4 class="form-group-label">Dados da Embarcação</h4>
+          <div class="labeled-box">
+            <label for="fVesselName">Nome da embarcação</label>
+            <input id="fVesselName" type="text" value="Sea Breeze" placeholder="Ex.: Sea Breeze" required />
+          </div>
+          <div class="labeled-box">
+            <label for="fVesselType">Tipo</label>
+            <select id="fVesselType">
+              <option value="Lancha">Lancha</option>
+              <option value="Jet Ski">Jet Ski</option>
+              <option value="Veleiro">Veleiro</option>
+              <option value="Iate">Iate</option>
+            </select>
+          </div>
+          <div class="two-col-row">
+            <div class="labeled-box">
+              <label for="fVesselModel">Modelo</label>
+              <input id="fVesselModel" type="text" value="250" placeholder="Ex.: 250" required />
+            </div>
+            <div class="labeled-box">
+              <label for="fVesselYear">Ano</label>
+              <input id="fVesselYear" type="number" value="2020" placeholder="2020" required />
+            </div>
+          </div>
+          <div class="two-col-row">
+            <div class="labeled-box">
+              <label for="fEngineBrand">Motor</label>
+              <input id="fEngineBrand" type="text" value="Mercury 200hp" placeholder="Marca / HP" />
+            </div>
+            <div class="labeled-box">
+              <label for="fBerthType">Vaga</label>
+              <select id="fBerthType">
+                <option value="Vaga molhada">Molhada</option>
+                <option value="Vaga seca">Seca</option>
+              </select>
+            </div>
+          </div>
+
+          <h4 class="form-group-label">Localização</h4>
+          <button type="button" class="gps-row-btn" id="useGpsBtn">
+            <span>📍</span>
+            <span>Usar minha localização atual</span>
+          </button>
+
+          <div class="mini-map-card">
+            <div class="map-streets"></div>
+            <div class="map-pin">📍</div>
+          </div>
+
+          <div class="labeled-box">
+            <input id="fLocationAddress" type="text" value="Marina Paulista — Vaga 12, Paulista/PE" required />
+          </div>
+
+          <button type="button" class="btn-navy-full mt-12" id="toStep2Btn">Próximo</button>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           6. DETALHES DO SERVIÇO — ETAPA 2
+           ========================================================= -->
+      <section id="view-new-step-2" class="app-view light-view">
+        <div class="navy-topbar">
+          <button type="button" class="topbar-back" data-go="new-step-1">←</button>
+          <h3>Novo Chamado</h3>
+          <span class="topbar-spacer"></span>
+        </div>
+
+        <form id="ticketSubmitForm" class="scroll-body form-scroll">
+          <h4 class="form-group-label">Tipo de Serviço</h4>
+          <div class="service-four-grid" id="serviceTypeGrid">
+            <button type="button" class="srv-box active" data-srv="Manutenção">
+              <span class="srv-ico">🛠️</span>
+              <span>Manutenção</span>
+            </button>
+            <button type="button" class="srv-box" data-srv="Reparo">
+              <span class="srv-ico">🔧</span>
+              <span>Reparo</span>
+            </button>
+            <button type="button" class="srv-box" data-srv="Revisão">
+              <span class="srv-ico">⚙️</span>
+              <span>Revisão</span>
+            </button>
+            <button type="button" class="srv-box" data-srv="Outros">
+              <span class="srv-ico">🛟</span>
+              <span>Outros</span>
+            </button>
+          </div>
+          <input type="hidden" id="fServiceType" name="serviceType" value="Manutenção" />
+
+          <h4 class="form-group-label">Descrição do problema</h4>
+          <div class="labeled-box">
+            <textarea
+              id="fProblemDesc"
+              name="problemDescription"
+              rows="3"
+              required
+              placeholder="Descreva o que está acontecendo com a embarcação..."
+            ></textarea>
+          </div>
+
+          <h4 class="form-group-label">Anexar fotos ou vídeos</h4>
+          <div class="media-three-grid">
+            <label class="media-slot" for="fMediaFiles">
+              <span>🖼️</span>
+            </label>
+            <label class="media-slot" for="fMediaFiles">
+              <span>🎬</span>
+            </label>
+            <label class="media-slot" for="fMediaFiles">
+              <span>+</span>
+            </label>
+          </div>
+          <input id="fMediaFiles" name="mediaFiles" type="file" accept="image/*,video/*" multiple hidden />
+          <div id="mediaCountLabel" class="media-hint">Nenhum arquivo anexado</div>
+
+          <h4 class="form-group-label">Data e horário de preferência</h4>
+          <div class="icon-select-box">
+            <span>📅</span>
+            <input id="fPrefDate" name="preferredDate" type="date" required />
+          </div>
+          <div class="icon-select-box">
+            <span>🕒</span>
+            <select id="fPrefPeriod" name="preferredPeriod">
+              <option value="Manhã (08:00 - 12:00)">Manhã (08:00 - 12:00)</option>
+              <option value="Tarde (13:00 - 17:00)">Tarde (13:00 - 17:00)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-navy-full mt-12">Finalizar</button>
+        </form>
+      </section>
+
+      <!-- =========================================================
+           7. CONFIRMAÇÃO DO CHAMADO
+           ========================================================= -->
+      <section id="view-confirmation" class="app-view light-view">
+        <div class="navy-topbar">
+          <span class="topbar-spacer"></span>
+          <h3>Confirmação</h3>
+          <span class="topbar-spacer"></span>
+        </div>
+
+        <div class="confirm-center">
+          <div class="green-check-circle">✓</div>
+          <h2>Solicitação enviada!</h2>
+          <p class="confirm-sub">Seu chamado foi registrado com sucesso.</p>
+
+          <span class="proto-caption">Número do chamado</span>
+          <strong class="proto-number" id="createdProtocolCode">#NF-000124</strong>
+
+          <div class="info-notice-box">
+            O mecânico responsável será notificado e entrará em contato em breve.
+          </div>
+
+          <button type="button" class="btn-navy-full" data-go="home">Voltar para o início</button>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           8. MEUS CHAMADOS
+           ========================================================= -->
+      <section id="view-tickets" class="app-view light-view has-tabbar">
+        <div class="navy-topbar">
+          <button type="button" class="topbar-back" data-go="home">☰</button>
+          <h3>Meus Chamados</h3>
+          <span class="topbar-spacer"></span>
+        </div>
+
+        <div class="tickets-filter-tabs" id="ticketsFilterTabs">
+          <button type="button" class="tf-tab active" data-filter="Todos">Todos</button>
+          <button type="button" class="tf-tab" data-filter="Em andamento">Em andamento</button>
+          <button type="button" class="tf-tab" data-filter="Finalizados">Finalizados</button>
+        </div>
+
+        <div class="scroll-body cards-stack" id="ticketsListContainer"></div>
+      </section>
+
+      <!-- =========================================================
+           9. NOTIFICAÇÕES
+           ========================================================= -->
+      <section id="view-notifications" class="app-view light-view">
+        <div class="navy-topbar">
+          <button type="button" class="topbar-back" data-go="home">←</button>
+          <h3>Notificações</h3>
+          <span class="topbar-spacer"></span>
+        </div>
+
+        <div class="scroll-body cards-stack" id="notificationsContainer"></div>
+      </section>
+
+      <!-- =========================================================
+           10. PERFIL & MINHA EMBARCAÇÃO
+           ========================================================= -->
+      <section id="view-profile" class="app-view light-view has-tabbar">
+        <div class="navy-topbar">
+          <button type="button" class="topbar-back" data-go="home">☰</button>
+          <h3>Meu Perfil</h3>
+          <button type="button" class="topbar-gear" id="switchRoleQuick">⚙</button>
+        </div>
+
+        <div class="scroll-body profile-wrap">
+          <div class="profile-avatar-block">
+            <div class="avatar-ring" id="profileAvatarInitials">MS</div>
+            <strong id="profileFullName">Mariana Silva</strong>
+            <span id="profileRoleText">Cliente</span>
+          </div>
+
+          <div class="profile-menu-list">
+            <button type="button" class="pm-item" data-go="vessels">
+              <span class="pm-ico">👤</span>
+              <span>Meus Dados</span>
+              <span class="pm-arrow">›</span>
+            </button>
+            <button type="button" class="pm-item" data-go="vessels">
+              <span class="pm-ico">🛥️</span>
+              <span>Minha Embarcação</span>
+              <span class="pm-arrow">›</span>
+            </button>
+            <button type="button" class="pm-item" data-go="new-step-1">
+              <span class="pm-ico">📍</span>
+              <span>Endereços / Marinas</span>
+              <span class="pm-arrow">›</span>
+            </button>
+            <button type="button" class="pm-item" data-go="notifications">
+              <span class="pm-ico">🔔</span>
+              <span>Notificações</span>
+              <span class="pm-arrow">›</span>
+            </button>
+            <button type="button" class="pm-item" id="supportBtn">
+              <span class="pm-ico">❓</span>
+              <span>Ajuda e Suporte</span>
+              <span class="pm-arrow">›</span>
+            </button>
+            <button type="button" class="pm-item danger" data-go="login">
+              <span class="pm-ico">↪</span>
+              <span>Sair</span>
+              <span class="pm-arrow">›</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TELA MINHA EMBARCAÇÃO -->
+      <section id="view-vessels" class="app-view light-view has-tabbar">
+        <div class="navy-topbar">
+          <button type="button" class="topbar-back" data-go="home">←</button>
+          <h3>Minha Embarcação</h3>
+          <span class="topbar-spacer"></span>
+        </div>
+
+        <div class="scroll-body cards-stack">
+          <div class="vessel-detail-card">
+            <div class="vd-header">
+              <span class="vd-emoji">🛥️</span>
+              <div>
+                <strong>Sea Breeze — Lancha 250</strong>
+                <span>Ano 2020 • Motor Mercury 200hp</span>
+              </div>
+            </div>
+            <div class="vd-meta">
+              <div><strong>Marina:</strong> Marina Paulista — Vaga 12</div>
+              <div><strong>Condição:</strong> Vaga Molhada</div>
+              <div><strong>Próxima revisão:</strong> Em 30 dias</div>
+            </div>
+            <button type="button" class="btn-navy-full mt-12" data-go="new-step-1">Solicitar Serviço nesta Embarcação</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- BARRA INFERIOR FIXA (TAB BAR) -->
+      <nav class="bottom-tabbar hidden" id="bottomTabBar">
+        <button type="button" class="btab active" data-go="home">
+          <span>🏠</span>
+          <small>Início</small>
+        </button>
+        <button type="button" class="btab" data-go="tickets">
+          <span>📋</span>
+          <small>Chamados</small>
+        </button>
+        <button type="button" class="btab" data-go="vessels">
+          <span>🛥️</span>
+          <small>Embarcações</small>
+        </button>
+        <button type="button" class="btab" data-go="profile">
+          <span>👤</span>
+          <small>Perfil</small>
+        </button>
+      </nav>
+
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

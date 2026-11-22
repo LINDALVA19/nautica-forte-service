@@ -1,0 +1,130 @@
+[
+  {
+    "id": "NF-2026-004",
+    "status": "Pendente",
+    "createdAt": "2026-11-22T13:31:28.601Z",
+    "client": {
+      "name": "pedro.gut",
+      "phone": "(81) 98765-4321",
+      "email": "pedro.gut@hotmaiw.com",
+      "cpf": ""
+    },
+    "vessel": {
+      "type": "Jet Ski",
+      "model": "365",
+      "year": "2022",
+      "engineBrand": "yamaha",
+      "engineType": "Popa",
+      "engineCount": "1"
+    },
+    "location": {
+      "marina": "marina de Itamaracá -  forte orange",
+      "berth": "Vaga 12",
+      "condition": "Vaga seca",
+      "city": "Paulista - PE"
+    },
+    "service": {
+      "type": "Reparo",
+      "preferredDate": "2026-12-04",
+      "preferredPeriod": "Tarde (13:00 - 17:00)",
+      "description": "bom dia, meu jet está com dificuldade em relação a força, talvez seja o carburador, pode da um olhadinha pfvr",
+      "mediaFiles": []
+    }
+  },
+  {
+    "id": "NF-2026-003",
+    "status": "Pendente",
+    "createdAt": "2026-11-22T12:54:58.591Z",
+    "client": {
+      "name": "pedro.gut",
+      "phone": "(81) 98765-4321",
+      "email": "pedro.gut@hotmaiw.com",
+      "cpf": ""
+    },
+    "vessel": {
+      "type": "Lancha",
+      "model": "250",
+      "year": "2020",
+      "engineBrand": "Mercury 200hp",
+      "engineType": "Popa",
+      "engineCount": "1"
+    },
+    "location": {
+      "marina": "Marina Paulista — Vaga 12, Paulista/PE",
+      "berth": "Vaga 12",
+      "condition": "Vaga molhada",
+      "city": "Paulista - PE"
+    },
+    "service": {
+      "type": "Manutenção",
+      "preferredDate": "2026-11-19",
+      "preferredPeriod": "Tarde (13:00 - 17:00)",
+      "description": "fujgcgkc",
+      "mediaFiles": []
+    }
+  },
+  {
+    "id": "NF-2026-002",
+    "status": "Pendente",
+    "createdAt": "2026-11-21T23:52:54.230Z",
+    "client": {
+      "name": "pedro gutemberg",
+      "phone": "(81) 99845-2210",
+      "email": "pedro.gut@hotmaiw.com",
+      "cpf": ""
+    },
+    "vessel": {
+      "type": "Lancha",
+      "model": "catamarã",
+      "year": "2012",
+      "engineBrand": "Mercury",
+      "engineType": "Popa",
+      "engineCount": "3"
+    },
+    "location": {
+      "marina": "Marina do forte orange",
+      "berth": "vaga 102",
+      "condition": "Vaga seca",
+      "city": "Itamaracá - PE"
+    },
+    "service": {
+      "type": "Manutenção corretiva",
+      "preferredDate": "2026-11-26",
+      "preferredPeriod": "Manhã",
+      "description": "o motor ta com dificuldade para subir quando desligo o barco",
+      "mediaFiles": []
+    }
+  },
+  {
+    "id": "NF-2026-001",
+    "status": "Pendente",
+    "createdAt": "2026-11-21T10:30:00.000Z",
+    "client": {
+      "name": "Carlos Eduardo Menezes",
+      "phone": "(81) 99812-3456",
+      "email": "carlos.menezes@exemplo.com",
+      "cpf": ""
+    },
+    "vessel": {
+      "type": "Lancha",
+      "model": "Coral 28",
+      "year": "2022",
+      "engineBrand": "Mercury",
+      "engineType": "Popa",
+      "engineCount": "1"
+    },
+    "location": {
+      "marina": "Marina Itamaracá",
+      "berth": "Píer A — Vaga 08",
+      "condition": "Vaga molhada",
+      "city": "Ilha de Itamaracá - PE"
+    },
+    "service": {
+      "type": "Revisão preventiva",
+      "preferredDate": "2026-11-25",
+      "preferredPeriod": "Manhã",
+      "description": "Revisão periódica de 100h, troca de óleo e verificação elétrica do painel.",
+      "mediaFiles": []
+    }
+  }
+]

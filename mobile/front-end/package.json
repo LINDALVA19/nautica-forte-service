@@ -1,0 +1,15 @@
+{
+  "name": "nautica-forte-service-mvp",
+  "version": "1.0.0",
+  "description": "MVP de abertura e gestão de chamados náuticos - Náutica Forte Service",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "multer": "^1.4.5-lts.1"
+  }
+}
